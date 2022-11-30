@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css"/>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        header {
+            background: url(img/bg0.png) center / cover;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+
+    <script type="module">
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+
+      };
+
+      firebase.initializeApp(firebaseConfig);
+ 
+      let uiConfig = {
+          callbacks: {
+              signInSuccessWithAuthResult: function () {
+                  console.log("ログイン成功")
+                  return true;
+              },
+          },
+          signInOptions: [
+              firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          ],
+      };
+
+      let ui = new firebaseui.auth.AuthUI(firebase.auth());
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+</head>
+
+
+<body>
+
+  <!-- header -->
+  <header>
+    <h1 class="headline">
+    <a>Startup Seeker</a>
+  </h1>
+  <ul class="nav-list">
+    <li class="nav-list-item"><a href="#about" class="c-none">About</a></li>
+    <li class="nav-list-item"><a href="#service" class="c-none">Service</a></li>
+    <li class="nav-list-item"><a href="#news" class="c-none">News</a></li>
+    <li class="nav-list-item"><a href="#team" class="c-none">Team</a></li>
+    <li class="nav-list-item"><a href="#contact" class="c-none">Contact</a></li>
+  </ul>
+
+  <p class="chuo">スタートアップ特化の<br>
+      情報検索プラットフォーム<br>
+      "Startup Seeker"<br>
+      <a class="btn">α版事前登録</a>
+  </p>
+  <div id="firebaseui-auth-container" class="text-center chuo">Login</div>
+
+
+  </header>
+
+  <main>
+        <div class="x-scroll">
+            <div class="x-scroll_inner">
+                <div class="x-scroll_block">
+                    <img src="img/W2000px_01.png" alt="ロゴ1" class="x-scroll_item">
+                    <img src="img/W2000px_02.png" alt="ロゴ2" class="x-scroll_item">
+                    <img src="img/W2000px_01.png" alt="ロゴ1" class="x-scroll_item">
+                    <img src="img/W2000px_02.png" alt="ロゴ2" class="x-scroll_item">
+                    <img src="img/W2000px_01.png" alt="ロゴ1" class="x-scroll_item">
+                    <img src="img/W2000px_02.png" alt="ロゴ2" class="x-scroll_item">
+                    <img src="img/W2000px_01.png" alt="ロゴ1" class="x-scroll_item">
+                    <img src="img/W2000px_02.png" alt="ロゴ2" class="x-scroll_item">
+                    <img src="img/W2000px_01.png" alt="ロゴ1" class="x-scroll_item">
+                    <img src="img/W2000px_02.png" alt="ロゴ2" class="x-scroll_item">
+                    <img src="img/W2000px_01.png" alt="ロゴ1" class="x-scroll_item">
+                    <img src="img/W2000px_02.png" alt="ロゴ2" class="x-scroll_item">
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="heading-lv1 heading-margin text-center strong1" id="about">About</h2>
+            <p class="text text-center">スタートアップ業界に関わる人、興味をもった人に対して必要な情報に迅速にアクセスできるようにする<br>横断型の情報検索プラットフォームです。 </p>
+            <figure class="service-image">
+                <img src="img/service.png" alt="サービスの特徴" >
+            </figure>
+            <p class="small text-center">※上記図は検索可能な情報イメージになります（今後変更する可能性があります）</p>
+        </section>  
+
+        <!-- 交互カラム部分 -->
+        <section>
+          <h2 class="heading-lv1 heading-margin text-center strong1" id="service">Service</h2>
+          <div class="column-wrapper text-margin">
+              <div class="column2">
+                <figure>
+                  <img src="img/t1.png" alt="特徴①：スタートアップに関する情報に特化" >
+                </figure>
+              </div>
+              <div class="column1">
+                <div>
+                  <div class="heading-lv2 strong1">特徴①：スタートアップに関する情報に特化</div>
+                  <div class="heading-lv3">スタートアップに関連する情報のみが検索可能です。従来の検索エンジンでは中々辿りつきにくかったスタートアップ情報に絞って検索できます。</div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="column-wrapper">
+              <div class="column2">
+                <figure>
+                  <img src="img/t2.png" alt="特徴②：知りたい情報を網羅的に集約" >
+                </figure>              </div>
+              <div class="column1">
+                <div>
+                  <div class="heading-lv2 strong1">特徴②：知りたい情報を網羅的に集約</div>
+                  <div class="heading-lv3">スタートアップの資金調達情報や採用情報、事業の状況、開催されているイベント情報などを網羅的に掲載します。特定業種での絞り込みなど検索性、実用性を追求します。</div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="column-wrapper">
+              <div class="column2">
+                <figure>
+                  <img src="img/t3.png" alt="特徴③：オープンな運営体制" >
+                </figure>              </div>
+              <div class="column1">
+                <div>
+                  <div class="heading-lv2 strong1">特徴③：オープンな運営体制</div>
+                  <div class="heading-lv3">本サービスの運営は有志によって行われ、情報収集の方法や活動内容について公開していきます。参加された方の貢献に応じたインセンティブ設計などWeb3の仕組みを活用した組織運営を目指します。</div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!--ニュース情報です-->
+          <section id="news">
+            <div class="news-wrapper">
+              <h2 class="heading-lv1 heading-margin text-center strong1" id="news">News</h2>
+              <ul class="news-list">
+                <li class="news-item">
+                  <div class="news-image">
+                    <img src="img/comingsoon.png" alt="ニュース1">
+                  </div>  
+                  <div class="news-contents text-center">
+                    <h3 class="news-heading">現在クローズドβ版で実証実験中</h3>
+                    <p class="news-date">202X.XX.XX</p>
+                  </div>
+                </li>
+                <li class="news-item">
+                  <div class="news-image">
+                    <img src="img/comingsoon.png" alt="ニュース1">
+                  </div>  
+                  <div class="news-contents text-center">
+                    <h3 class="news-heading">現在クローズドα版で実証実験中</h3>
+                    <p class="news-date">202X.XX.XX</p>
+                  </div>                </li>
+                  <li class="news-item">
+                    <div class="news-image">
+                    <img src="img/comingsoon.png" alt="ニュース1">
+                  </div>  
+                  <div class="news-contents text-center">
+                    <h3 class="news-heading">現在MVPで仮説検証中</h3>
+                    <p class="news-date">202X.XX.XX</p>
+                  </div>                
+                </li>
+              </ul>
+            </div>
+          </section>
+
+
+          <!--運営者情報です。追加でリスト形式での運営者情報を追記する-->
+          <section>
+              <h2 class="heading-lv1 heading-margin text-center strong1" id="team">Team</h2>
+              <ul class="center-block">
+                <li class="text">メンバー：栗島祐介（Yusuke Kurishima） ※現在、プロダクトローンチに向けた協力者募集中</li>
+                <li class="text list-margin">活動拠点：オンライン or G's Academy東京校</li>
+                <li class="text list-margin">
+                  <div class="iframe-wrp">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.3113002289288!2d139.7008082152002!3d35.66933613823173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c9fa9e2e881%3A0x35396adb5ba7ce03!2z44K444O844K644Ki44Kr44OH44Of44O85p2x5Lqs!5e0!3m2!1sja!2sjp!4v1666342837518!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </li>
+              </ul>
+
+           </section>
+
+
+
+
+          <!--ここから問い合わせフォーム--> 
+          <section>
+              <h2 class="heading-lv1 heading-margin text-center strong1" id="contact">Contact</h2>
+              <p class="text text-center">サービスの説明依頼・お問合せはこちらより </p>
+
+              <form>
+                  <div class="item">
+                      <label class="label form-margin">お名前</label>
+                      <input class="inputs form-margin" type="text" name="name">
+                  </div>
+                  
+                  <div class="item">
+                      <label class="label">メールアドレス</label>
+                      <input class="inputs" type="email" name="email">
+                  </div>
+                  
+                  <div class="item">
+                      <p class="label">問い合わせ種別</p>
+                      <div class="inputs">
+                      <li class="formn-list">
+                        <input id="form-service" type="radio" name="menu" value="form-service"><label for="form-service">サービス利用について</label>
+                      </li>
+                      <li class="formn-list">
+                        <input id="form-interview" type="radio" name="menu" value="form-interview"><label for="form-interview">取材について</label>
+                      </li>
+                      <li class="formn-list">
+                        <input id="others" type="radio" name="menu" value="others"><label for="others">その他</label>
+                      </li>
+                    </div>
+                  </div>
+                  
+                  <div class="item">
+                      <label class="label">問い合わせ詳細</label>
+                      <textarea class="inputs"></textarea>
+                  </div>
+                  
+                  <div class="btn-area">
+                      <input type="submit" value="送信する"><input type="reset" value="リセット">
+                  </div>
+              </form>
+          </section>  
+  </main>     
+
+  <footer>
+    <p class="headline">
+        <small>©️ 2022 Startup Seeker</small>
+    </p>
+  </footer>
+
+</body>
+
+
+
+</html>

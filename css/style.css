@@ -1,0 +1,404 @@
+/* ここから下に記載していく */
+@charset "utf-8";
+
+html{
+  font-size: 62.5%; /* デフォルト16px×62.5=10pxとすることで1rem=10pxへ*/
+}
+
+body {
+  background: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  font-family:"Noto Sans JP", Arial, Helvetica, sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    font-weight: bold;
+    padding: 0px 0;
+    color: rgb(0, 0, 0);
+    position: relative;
+	height: 75vh;
+  }
+
+.c-none{
+  color:inherit;
+  text-decoration: none;
+}
+
+  /* サイトタイトルをヘッダーに中央配置 */
+.chuo {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 100%;
+	margin: 0;
+	padding: 1.2em ;
+	color: rgb(0, 0, 0);
+	font-size: 4rem;
+	line-height: 1.4;
+	font-family: "Dosis", sans-serif;
+	letter-spacing: .1em;
+	transform: translateY(-50%);
+}
+
+  header .headline{
+      line-height: 10rem;
+      float: left;
+      font-size: 3rem;
+      margin-left: 5rem;
+  }
+  .nav-list {
+      line-height: 10rem;
+      float: right;
+      margin-left: 5rem;
+      list-style: none;
+  }
+  .nav-list-item {
+    list-style: none;
+    display: inline-block;
+    padding-right: 5rem;
+  }
+
+.strong1{
+    font-weight: 900;
+}
+
+.heading-lv1 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.heading-lv2 {
+    font-size: 2.4rem;
+    margin: 2rem 0;
+    line-height: normal;
+}
+
+.heading-lv3 {
+    font-size: 2rem;
+    line-height: normal;
+}
+
+.heading-lv3{
+    font-size: 1.8rem;
+}
+
+.heading-margin {
+    margin-top: 80px;
+}
+
+.text {
+    margin: 30px 0 0;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-family: 'Noto Sans JP';
+}
+
+.text-margin {
+  margin-top: 3rem;
+
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.small{
+  font-size: 1.2rem;
+}
+
+.service-image {
+  margin: 1.6rem 0 0;
+  text-align: center;
+}
+
+.service-image img {
+    height: auto;
+    border-radius: 3rem; 
+    width : 80vw ; 
+}
+
+.profile-image {
+  margin: 1.6rem 0 0;
+  text-align: center;
+}
+
+
+.profile-image img {
+  height: auto;
+  border-radius: 3rem; 
+  width : 50vw ; 
+}
+
+/*ホバー無し状態のスタイル*/
+.btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    background: #f4b364;
+    color: #111!important;
+    border: solid 2px #f4b364;
+    border-radius: 3px;
+    transition: .4s;
+    border-radius: 3rem; 
+  }
+  /*ホバー無し状態のスタイル＿ここまで*/
+  
+  /*ホバー有り状態のスタイル*/
+  .btn:hover {
+    background: #fff;
+    color: #f4b364;
+  }
+  /*ホバー有り状態のスタイル＿ここまで*/
+
+  /* スクロール機能 */
+  .x-scroll {
+	width: 100%;
+	overflow: hidden;
+}
+.x-scroll_inner {
+	display: flex;
+	animation: 15s linear infinite xScroll;
+}
+@keyframes xScroll {
+	0%     { transform: translateX(0);}
+	100% { transform: translateX(-1700px);} /* .x-scroll_block 1つ分の幅だけ動かす */
+}
+.x-scroll_block {
+	display: flex;
+	width: 304rem; /* (250px + 20px) × 12 */
+}
+.x-scroll_item {
+	width: 25rem;
+	height: 18rem;
+	margin: 1rem;
+    padding: 4rem 4rem 4rem 4rem;
+}
+  /* スクロール機能-ここまで */
+
+  /* 交互コラム */
+  .column-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  :nth-of-type(even) {
+  flex-direction: row-reverse;
+  }
+  
+.wrap{
+  text-align:center;
+}
+
+  .column1, .column2 {
+    width: 50%;
+    align-items: center;
+  }
+  
+  .column1 {
+    background: #ffffff;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 4rem 5rem 5rem 5rem;
+  }
+  
+  .column2 {
+    box-sizing: border-box;
+    margin: auto;
+  }
+  
+  .column2 img {
+    height: 40rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius:0%;
+  }
+
+  .column-wrapper:nth-of-type(2n) .column1:nth-of-type(2){
+    background: #ffffff;
+  }
+
+  
+  @media screen and ( max-width:50rem )
+  {
+    .column-wrapper {
+      flex-direction: column;
+    }
+    .column1, .column2 {
+    width: 100%;
+  }
+    .column1 {
+    padding: 2.5rem;
+  }
+  }
+
+
+  /* ニュース */
+
+  .news-wrapper{
+    max-width: 100vw;
+    margin: 0 6rem;
+  }
+
+  .news-list{
+    display: flex;
+    margin: 3rem 0 6.4rem;
+  }
+
+  .news-image {
+    width: auto;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 1.5rem 2.4rem;
+  }
+
+  .news-image img {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius:0%;
+  }
+
+  .news-heading{
+    margin: 0 0 1.6rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .news-contents{
+    padding: 0 1.6rem;
+  }
+
+  .news-item{
+    width: 33.333%;
+  }
+
+
+/* チーム部分 */
+
+  .center-block{
+    width:80rem;
+    margin:0 auto;
+  }
+
+  .list-margin{
+    margin-top: 0.5rem;
+  }
+
+  .iframe-wrp {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* = height ÷ width × 100 */
+  }
+  .iframe-wrp iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* フォーム関連のCSS */
+  
+  .lead-form{
+    text-align: center;
+    font-size:1.8rem;
+  }
+  form{
+    width:62rem;
+    height: auto;
+    margin:0 auto;
+  }
+  .item{
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .label{
+    float: left;
+    margin-right: 2rem;
+    width:15rem;
+    border-left: solid 3px #e0505d;
+    padding-left: 1rem;
+  }
+  .inputs{
+    float: left;
+    width:45rem;
+  }
+  input[type="text"],input[type="email"]{
+    border: solid 1px #aaa;
+    border-radius:5px;
+    padding:1rem;
+    font-size: 1.5rem;
+  }
+  textarea{
+    border: solid 1px #aaa;
+    border-radius:5px;
+    padding: 1rem;
+    height: 16rem;
+    font-size: 1.5rem;
+  }
+  .btn-area{
+    text-align: center;
+  }
+  input[type="submit"]{
+    background: #e0505c;
+    border: none;
+    color: white;
+    font-size:1.7rem;
+    font-weight:bold;
+    padding: 1rem 2rem;
+    margin: 0 0.5rem;
+  }
+  input[type="reset"]{
+    background: #aaa;
+    border: none;
+    color: white;
+    font-size:1.7rem;
+    font-weight:bold;
+    padding: 1rem 2rem;
+    margin: 0 0.5rem;
+  }
+
+  .formn-list{
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+  
+  .form-margin {
+    margin-top: 60px;
+  }
+
+  /* フッター */
+
+
+  footer {
+    height: 10rem;
+    width: 100%;
+    font-weight: bold;
+    padding: 0px 0;
+    background-color: #707070;
+    position: relative;
+    margin-top: 6rem;
+  }
+
+  footer .headline{
+    line-height: 10rem;
+    font-weight: bold;
+    float: right;
+    font-size: 1.4rem;
+    margin-right: 5rem;
+    color: #ffffff;
+}
